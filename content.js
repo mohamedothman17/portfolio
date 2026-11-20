@@ -3,6 +3,7 @@ const D = id => `https://drive.google.com/file/d/${id}/view`;
 window.CONTENT = {
 filters: ['all', 'brand', 'ai', 'anim', 'cars', 'football', 'vlog'],
 shown: 10,
+discount: {"on": true, "odds": [[5, 35], [10, 35], [15, 22], [20, 8]], "validDays": 7, "minMs": 20000, "priceDwellMs": 12000, "formIdleMs": 30000, "lateMs": 90000, "t": {"en": {"tag": "Bonus round", "title": "Still deciding? Try your luck.", "sub": "One spin, one real discount on your first project.", "spin": "Spin", "spinning": "Spinning…", "win": "{pct}% off your first project", "terms": "It is real and it is yours. It stays once you start your brief, for 7 days. First project only, one spin per visitor.", "lock": "Keep it: start my brief", "later": "Maybe later", "close": "Close", "chipWait": "{pct}% off is waiting. Start your brief to keep it.", "chipLocked": "{pct}% off kept · code {code}"}, "ar": {"tag": "جولة الحظ", "title": "للحين محتار؟ جرّب حظك.", "sub": "لفّة وحدة، وخصم حقيقي على أول مشروع.", "spin": "لفّ", "spinning": "جاري اللف…", "win": "خصم {pct}% على أول مشروع", "terms": "الخصم حقيقي ولك. يثبت أول ما تبدأ تعبي البريف، ويبقى 7 أيام. لأول مشروع فقط، ولفّة وحدة لكل زائر.", "lock": "ثبّته: ابدأ البريف", "later": "بعدين", "close": "إغلاق", "chipWait": "خصم {pct}% بانتظارك. ابدأ البريف عشان تثبّته.", "chipLocked": "خصم {pct}% مثبت · الكود {code}"}}},
 proof: {"en": [{"img": "proof1.jpg", "q": "First, tell him thank you, he did a great job. Let him edit at his own pace so the work comes out even better.", "who": "Mahmoud Fahmawy, brand ads, UAE"}, {"img": "proof2.jpg", "q": "Asked how likely he is to recommend me, from 1 to 10: “Honestly, 10.”", "who": "Mahmoud Fahmawy, brand ads, UAE"}, {"img": "proof3.jpg", "q": "Honestly, I am the one who is happy working with you. God willing, we keep going together. 10/10.", "who": "Ibrahim, football creator, UAE"}], "ar": [{"img": "proof1.jpg", "q": "«أول شي احكيلو شكراً إلك وما قصرت… خلي يمنتج على راحتو عشان يطلع أحلى شغل»", "who": "محمود فهماوي، إعلانات براندات، الإمارات"}, {"img": "proof2.jpg", "q": "سألته من 1 لـ 10 قد إيه يرشحني لحد ثاني، ورد: «والله 10»", "who": "محمود فهماوي، إعلانات براندات، الإمارات"}, {"img": "proof3.jpg", "q": "«والله أنا اللي يسعدني صراحة بكل أمانة، إن شاء الله مكملين مع بعض» وتقييمه 10/10", "who": "إبراهيم، صانع محتوى كورة، الإمارات"}]},
 lfFacts: { en: ['5:41 long', '16:9 for YouTube', 'Data cards with sources', 'English captions'], ar: ['مدته 5:41', '16:9 ليوتيوب', 'كروت أرقام بالمصدر', 'كابشن إنجليزي'] },
 work: [
@@ -269,7 +270,7 @@ form: {
   doneMail:'Your email app should now be open with the message filled in. Press send there to finish. It is not sent until you do.',
   doneNone:'Contact details are not set on this page yet. Copy the message and send it through Instagram.',
   doneNext:'What happens next: I read your message myself and reply with a few questions or a rough plan. Then you decide whether to go ahead. There is no pressure either way.',
-  again:'Open WhatsApp again', ig:'Send on Instagram', copy:'Copy message', copied:'Copied', edit:'Edit my answers'
+  again:'Open WhatsApp again', discLabel:'Discount', discLine:'{pct}% off the first project, code {code}', ig:'Send on Instagram', copy:'Copy message', copied:'Copied', edit:'Edit my answers'
  },
  ar: {
   sep:'، ', count:'الخطوة {a} من {b}: {label}', countLast:'الخطوة الأخيرة: {label}', optional:'(اختياري)', required:'اختر أو اكتب هنا عشان تكمل.',
@@ -311,7 +312,7 @@ form: {
   doneMail:'المفروض الإيميل انفتح والرسالة مكتوبة فيه. اضغط إرسال هناك عشان توصلني، وما تنرسل قبل كذا.',
   doneNone:'بيانات التواصل للحين ما انضافت للصفحة. انسخ الرسالة وأرسلها على إنستقرام.',
   doneNext:'وبعدها: أقرأ رسالتك بنفسي وأرد بأسئلة قليلة أو خطة مبدئية، وأنت تقرر إذا تبي تكمل. بدون أي ضغط.',
-  again:'افتح واتساب مرة ثانية', ig:'أرسل على إنستقرام', copy:'انسخ الرسالة', copied:'تم النسخ', edit:'عدّل إجاباتي'
+  again:'افتح واتساب مرة ثانية', discLabel:'الخصم', discLine:'{pct}% على أول مشروع، الكود {code}', ig:'أرسل على إنستقرام', copy:'انسخ الرسالة', copied:'تم النسخ', edit:'عدّل إجاباتي'
  }
 }
 };

@@ -353,7 +353,6 @@ html[lang=ar] .h3big{line-height:1.45}
   --steps:polygon(0 8px,4px 8px,4px 4px,8px 4px,8px 0,calc(100% - 8px) 0,calc(100% - 8px) 4px,calc(100% - 4px) 4px,calc(100% - 4px) 8px,100% 8px,100% calc(100% - 8px),calc(100% - 4px) calc(100% - 8px),calc(100% - 4px) calc(100% - 4px),calc(100% - 8px) calc(100% - 4px),calc(100% - 8px) 100%,8px 100%,8px calc(100% - 4px),4px calc(100% - 4px),4px calc(100% - 8px),0 calc(100% - 8px));
 }
 html[lang=ar]{--display:"Alexandria","Almarai",sans-serif;--body:"Almarai","IBM Plex Sans",sans-serif}
-*,*::before,*::after{border-radius:0!important}
 /* calm dither instead of grain */
 .grain{inset:0;opacity:.04;animation:none;background-image:linear-gradient(45deg,#fff 25%,transparent 25%,transparent 75%,#fff 75%),linear-gradient(45deg,#fff 25%,transparent 25%,transparent 75%,#fff 75%);background-size:4px 4px;background-position:0 0,2px 2px}
 /* type */
@@ -486,3 +485,151 @@ html[lang=ar] .now-live{font-family:var(--body);font-size:14px}
 /* real numbers under the hero line */
 .hero-proof{display:inline-flex;align-items:center;gap:10px;margin:-14px 0 26px;padding:8px 12px;background:var(--surface);border:3px solid var(--rule);font-size:15px;color:var(--paper)}
 .hero-proof::before{content:"";width:10px;height:10px;background:var(--amber);flex:none}
+
+/* =====================================================================
+   APPLE LAYER: dark "Pro" look, system type, pill buttons, rounded cards.
+   Colour psychology: black = premium and focus, blue = trust and action,
+   orange = reward (the discount only), green = success.
+   Pixel art stays in the logo, the video strip, the timecode and the prize machine.
+   ===================================================================== */
+:root{
+  --ink:#000000; --surface:#161617; --surface2:#1d1d1f; --rule:#2d2d2f; --paper:#f5f5f7; --mute:#86868b;
+  --tally:#2997ff; --amber:#2997ff; --blue:#0071e3; --blue2:#0077ed; --link:#2997ff;
+  --reward:#ff9f0a; --ok:#30d158; --shadow:#000;
+  --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Inter","Segoe UI",Roboto,sans-serif;
+  --body:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,sans-serif;
+  --mono:"Silkscreen",ui-monospace,monospace;
+}
+html[lang=ar]{--display:"Zain",-apple-system,"Segoe UI",sans-serif;--body:"Zain",-apple-system,"Segoe UI",sans-serif}
+body{font-size:17px;line-height:1.47;letter-spacing:-.022em;background:#000}
+html[lang=ar] body{letter-spacing:0;font-size:19px;line-height:1.7}
+.grain,.tracks,.cursor{display:none!important}
+body{cursor:auto}
+/* type: big, tight, calm */
+h1,h2,h3,.statement,.q,.now h3{font-family:var(--display);letter-spacing:-.015em!important}
+h1{font-weight:700;font-size:clamp(44px,7vw,96px);line-height:1.04}
+h2{font-weight:700;font-size:clamp(34px,4.6vw,64px);line-height:1.07}
+.statement{font-weight:700;font-size:clamp(34px,4.6vw,64px);line-height:1.07}
+html[lang=ar] h1{font-weight:800;font-size:clamp(46px,7vw,100px);line-height:1.15}
+html[lang=ar] h2,html[lang=ar] .statement{font-weight:800;line-height:1.2}
+html[lang=ar] h3,html[lang=ar] .q{font-weight:700}
+.lede,.hero-sub,.problem-body p{color:var(--mute)}
+.lede{font-size:clamp(17px,1.5vw,21px)}
+/* frosted nav */
+.hud{background:rgba(0,0,0,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);box-shadow:none;border-bottom:1px solid rgba(255,255,255,.08);padding-block:10px}
+.hud-name{font-family:var(--body);font-weight:600;font-size:16px}
+.tc{color:var(--mute)}
+.rec{background:var(--ok)}
+.lang{border:1px solid rgba(255,255,255,.2);background:transparent;border-radius:980px}
+/* Apple buttons: pills, blue for the action */
+.btn{border-radius:980px;border:1px solid var(--blue);background:var(--blue);color:#fff;box-shadow:none;font-weight:500;font-family:var(--body);min-height:44px;padding:0 22px;transition:background .2s,transform .12s}
+.btn:hover{background:var(--blue2);border-color:var(--blue2);color:#fff}
+.btn:active{transform:scale(.97)!important;box-shadow:none}
+.btn-ghost{background:transparent;color:var(--link);border-color:var(--link)}
+.btn-ghost:hover{background:rgba(41,151,255,.1);border-color:var(--link);color:var(--link)}
+.hud .btn-sm{min-height:32px;padding:0 14px;font-size:13px}
+.link,.now .link{color:var(--link);text-decoration:none}
+.link:hover{text-decoration:underline}
+/* hero: centred, the work under the words like a product shot */
+.hero{grid-template-columns:1fr;justify-items:center;text-align:center;padding-top:120px;padding-bottom:40px;min-height:auto}
+.hero-copy{max-width:900px;display:flex;flex-direction:column;align-items:center}
+.kicker{color:var(--mute);font-family:var(--body);font-weight:600}
+.hero-sub{max-width:62ch;margin:20px auto 22px}
+.hero-cta{justify-content:center}
+.hero-note,.hero-contacts{justify-content:center}
+.hero-proof{background:rgba(48,209,88,.12);border:1px solid rgba(48,209,88,.35);border-radius:980px;color:var(--paper);margin:0 0 26px}
+.hero-proof::before{background:var(--ok);border-radius:0}
+.hero-stack{width:min(780px,100%);height:min(62svh,600px);margin-top:36px}
+.hero-stack video{border-radius:34px!important;clip-path:none!important;border:1px solid #2d2d2f;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+.playhead{background:var(--link)}
+.playhead::before{background:var(--link)}
+.filmstrip{background:#000;border-block:1px solid #1d1d1f}
+.filmstrip span{font-family:var(--body);font-weight:600;color:#6e6e73}
+/* sections: centred heads, alternating calm greys */
+.sec-head,.work-head,.problem .statement{text-align:center}
+.work-head{flex-direction:column;align-items:center}
+.sec-head .lede{margin-inline:auto}
+.problem{grid-template-columns:1fr;max-width:980px;text-align:center}
+.problem-body{text-align:start}
+.for-list b{color:var(--link)}
+.filters button{border:1px solid #424245;background:transparent;border-radius:980px;color:var(--paper)}
+.filters button[aria-selected=true]{background:var(--paper);color:#000;border-color:var(--paper)}
+.styles,.longform,.ai,.process{background:transparent}
+.tests,.ai{background:var(--surface)!important;border:0}
+/* the video strip keeps its pixel frames: a little game reel inside an Apple page */
+.work{background:#000}
+.clipcard{opacity:.5}
+.clipcard.on video{border-color:var(--link)}
+.timeline-playhead,.timeline-playhead::before{background:var(--link)}
+.now{text-align:center;justify-items:center}
+.now p{margin-inline:auto}
+.now-tag{color:var(--link)}
+.now-live{background:var(--ok);color:#000;border-radius:980px;box-shadow:none}
+.now-live::before{background:#000}
+.more .btn{background:transparent;color:var(--link);border-color:var(--link)}
+/* cards */
+.pcard,.tier,.ratecard li,.lf-player video,.thumbs img,.ai-media video,#styleVid,.hooklab video,.lb video{border-radius:28px!important}
+.pcard{background:var(--surface);border:0;box-shadow:none;padding:22px}
+.pcard img{clip-path:none;border-radius:16px!important}
+.pcard figcaption{color:var(--mute);font-family:var(--body);font-size:13px;font-weight:600}
+.lf-player video,.thumbs img{clip-path:none;border:0}
+.tier{background:var(--surface);border:1px solid transparent;box-shadow:none;padding:30px 26px}
+.tier.anchor{background:var(--paper);color:#1d1d1f;border-color:var(--paper)}
+.tier.anchor p,.tier.anchor li{color:#424245}
+.tier.anchor .btn{background:#1d1d1f;border-color:#1d1d1f;color:#fff}
+.tier.is-rec{border-color:var(--link);box-shadow:0 0 0 1px var(--link) inset}
+.tier .badge{background:var(--blue);border-radius:980px!important}
+.tier .twhy{color:var(--link);border-color:var(--rule)}
+.tier.anchor .twhy{color:var(--blue)}
+.tier li::before{background:var(--link);border-radius:50%!important}
+.markers{border-top:1px solid var(--rule)}
+.markers li::before{background:var(--link);border-radius:50%!important;width:12px;height:12px}
+.markers .mtc{color:var(--link)}
+.faq summary::after{color:var(--link);font-family:var(--body)}
+/* the brief: a light, calm sheet (white = clarity before a decision) */
+.brief{background:#f5f5f7;color:#1d1d1f}
+.brief .lede{color:#6e6e73}
+.form{background:#fff;border:0;border-radius:28px!important;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.progress{background:#e8e8ed;border-radius:980px!important}
+.progress i{background:var(--blue);border-radius:980px!important;transition:width .4s ease}
+.chips span{border:1px solid #d2d2d7;border-radius:980px!important;background:#fff}
+.chips input:checked+span{background:#1d1d1f;color:#fff;border-color:#1d1d1f}
+.field input,.field textarea{border:1px solid #d2d2d7;border-radius:12px!important;background:#fff}
+.field input:focus,.field textarea:focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.15)}
+.form .btn{background:var(--blue);border-color:var(--blue);color:#fff}
+.form .btn-ghost{background:transparent;color:var(--blue);border-color:#d2d2d7}
+.brief .direct .btn{background:#fff;color:#1d1d1f;border:1px solid #d2d2d7;box-shadow:none}
+.brief .direct .btn:hover{background:#f5f5f7}
+.ch-ic{background:transparent;padding:0}
+.msg{background:#f5f5f7;border:0;border-radius:14px!important}
+.step-count{font-family:var(--body);color:#6e6e73}
+.foot{color:var(--mute)}
+@media (max-width:1000px){.hero-stack{height:56svh}.hero-stack video{width:30vw}.hero-stack video:nth-child(2){width:34vw}}
+@media (max-width:600px){h1{font-size:40px}html[lang=ar] h1{font-size:44px}.hero{padding-top:96px}.hero-stack{height:50svh;margin-top:24px}}
+
+/* PRIZE MACHINE: pixel art, orange = reward */
+.prize{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:20px;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.prize[hidden]{display:none!important}
+.prize-box{position:relative;width:min(440px,100%);background:#111;color:#f5f5f7;padding:28px 24px 24px;text-align:center;border:4px solid var(--reward);clip-path:var(--steps);box-shadow:0 0 0 4px #000}
+.prize-x{position:absolute;top:10px;inset-inline-end:14px;background:none;border:0;color:#86868b;font-size:28px;cursor:pointer}
+.prize-tag{display:inline-block;font-family:"Silkscreen",monospace;font-size:12px;color:#000;background:var(--reward);padding:4px 10px;margin-bottom:12px}
+html[lang=ar] .prize-tag{font-family:var(--body);font-size:14px;font-weight:700}
+.prize-box h3{font-size:clamp(24px,4vw,30px);margin-bottom:6px}
+.prize-sub{color:#a1a1a6;margin-bottom:18px}
+.reels{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:0 auto 18px;max-width:300px}
+.reel{height:72px;overflow:hidden;background:#000;border:4px solid #2d2d2f;clip-path:var(--steps)}
+.strip{display:flex;flex-direction:column}
+.strip span{height:64px;display:grid;place-items:center;font-family:"Silkscreen",monospace;font-size:34px;color:var(--reward);image-rendering:pixelated}
+.prize-spin{background:var(--reward)!important;border-color:var(--reward)!important;color:#000!important;font-weight:700;min-width:160px}
+.prize-spin:disabled{opacity:.7}
+.prize-win{font-size:clamp(26px,5vw,34px);font-weight:700;color:var(--reward);margin-bottom:8px}
+.prize-terms{font-size:14px;color:#a1a1a6;margin-bottom:18px;line-height:1.5}
+.prize-result .btn-row{justify-content:center;flex-wrap:wrap}
+.prize.won .reel{border-color:var(--reward)}
+.prize-chip{position:fixed;inset-inline-start:16px;bottom:16px;z-index:90;max-width:min(360px,calc(100% - 32px));background:var(--reward);color:#000;border:0;font:600 14px/1.35 var(--body);padding:12px 16px;text-align:start;cursor:pointer;clip-path:var(--steps)}
+.prize-chip.is-locked{background:var(--ok)}
+.prize-chip[hidden]{display:none!important}
+@media (prefers-reduced-motion:reduce){.prize{backdrop-filter:none}}
+.hero-contacts .ch-ic,#footLinks .ch-ic{background:#f5f5f7;border-radius:7px!important;padding:3px;width:24px;height:24px}
+.ch-mini{color:#f5f5f7;font-family:var(--body);font-size:13px;font-weight:500}
+.now-live{justify-self:center}

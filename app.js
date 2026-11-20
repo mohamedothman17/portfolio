@@ -235,6 +235,7 @@ function val(id) {
 function message(bold) {
   const S = FS(), lab = k => bold ? `*${k}:*` : `${k}:`;
   const groups = S.msg.groups.map(g => g.map(([k, id]) => { const v = val(id); return v ? `${lab(k)} ${v}` : ''; }).filter(Boolean).join('\n')).filter(Boolean);
+  const dz = window.MO_DISCOUNT; if (dz) groups.push(`${lab(S.discLabel || 'Discount')} ${(S.discLine || '{pct}% {code}').replace('{pct}', dz.pct).replace('{code}', dz.code)}`);
   return [S.msg.hello, ...groups, S.msg.thanks].join('\n\n');
 }
 function mailLink() { const S = FS(); return C.email ? `mailto:${C.email}?subject=${encodeURIComponent(S.mailSubject.replace('{name}', formState.name || ''))}&body=${encodeURIComponent(message(false))}` : ''; }
