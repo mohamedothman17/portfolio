@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Video Editor for Brands, Football and AI Ads</title>
+<meta name="description" content="Brand ads, football storytelling and AI ads, edited in After Effects and Premiere for teams and creators in the Gulf, Europe and the US.">
+<meta property="og:title" content="Video Editor for Brands, Football and AI Ads">
+<meta property="og:description" content="The first seconds decide if people watch. I edit for them.">
+<meta property="og:image" content="media/logo-square.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;600;700&family=Silkscreen&family=IBM+Plex+Sans:wght@400;600&family=Alexandria:wght@500;600;700&family=Almarai:wght@400;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="media/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span></span></div>
+
+<div class="slate" id="slate" aria-hidden="true">
+  <div class="slate-tc" id="slateTc">00:00:00:00</div>
+</div>
+
+<header class="hud">
+  <a class="hud-name" href="#top"><img src="media/logo.png" alt="" width="40" height="30"><span id="hudName">YOUR NAME</span></a>
+  <div class="hud-right">
+    <span class="rec" aria-hidden="true"></span>
+    <span class="tc" id="tc" aria-label="timecode">00:00:00:00</span>
+    <button class="lang" id="lang" type="button">العربية</button>
+    <a class="btn btn-sm magnetic" href="#brief" data-k="navCta"></a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero" aria-labelledby="h1">
+  <div class="tracks" aria-hidden="true"><i>V2</i><i>V1</i><i>A1</i></div>
+  <div class="hero-copy">
+    <p class="kicker" data-k="kicker"></p>
+    <h1 id="h1"><span class="clip" data-k="h1a"></span><span class="clip" data-k="h1b"></span></h1>
+    <p class="hero-sub" data-k="heroSub"></p>
+    <p class="hero-proof" data-k="heroProof"></p>
+    <div class="hero-cta">
+      <a class="btn magnetic" href="#brief" data-k="cta1"></a>
+      <a class="btn btn-ghost magnetic" href="#work" data-k="cta2"></a>
+    </div>
+    <p class="hero-note" data-k="heroNote"></p>
+    <div class="hero-contacts" id="heroContacts"></div>
+  </div>
+  <div class="hero-stack" id="stack" aria-hidden="true">
+    <video src="media/deliveroo.mp4" poster="media/deliveroo.jpg" muted loop playsinline preload="auto"></video>
+    <video src="media/aljazira.mp4" poster="media/aljazira.jpg" muted loop playsinline preload="auto"></video>
+    <video src="media/lays.mp4" poster="media/lays.jpg" muted loop playsinline preload="auto"></video>
+  </div>
+  <div class="playhead" id="playhead" aria-hidden="true"></div>
+</section>
+
+<div class="filmstrip" aria-label="Brands">
+  <div class="filmstrip-track">
+    <span>OKX</span><span>Deliveroo</span><span>Eyewa</span><span>noon</span><span>Deepal</span><span>botim</span><span>Al Jazira Club</span><span class="concept" data-k="concept1"></span>
+    <span>OKX</span><span>Deliveroo</span><span>Eyewa</span><span>noon</span><span>Deepal</span><span>botim</span><span>Al Jazira Club</span><span class="concept" data-k="concept1"></span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem wrap">
+  <h2 class="statement" data-k="probH"></h2>
+  <div class="problem-body">
+    <p data-k="probP"></p>
+    <ul class="for-list" id="forList"></ul>
+    <p class="prob-close" data-k="probClose"></p>
+  </div>
+</section>
+
+<!-- WORK: timeline -->
+<section class="work" id="work" aria-labelledby="workH">
+  <div class="work-head wrap">
+    <h2 id="workH" data-k="workH"></h2>
+    <div class="filters" id="filters" role="tablist"></div>
+  </div>
+  <div class="work-pin" id="workPin">
+  <div class="timeline" id="timeline">
+    <div class="timeline-ruler" aria-hidden="true"></div>
+    <div class="timeline-track" id="track"></div>
+    <div class="timeline-playhead" aria-hidden="true"></div>
+  </div>
+  <div class="now wrap" id="now" aria-live="polite">
+    <span class="now-tag" id="nowTag"></span>
+    <h3 id="nowTitle"></h3>
+    <p id="nowDesc"></p>
+    <button class="link" id="nowOpen" type="button" data-k="watch"></button>
+    <a class="now-live" id="nowLive" target="_blank" rel="noopener" hidden></a>
+  </div>
+  </div>
+  <div class="more wrap"><button class="btn btn-ghost" id="moreWork" type="button" hidden></button></div>
+</section>
+
+<!-- PROOF: client messages -->
+<section class="proof wrap" id="proof" aria-labelledby="prH">
+  <div class="sec-head"><h2 id="prH" data-k="prH"></h2><p class="lede" data-k="prSub"></p></div>
+  <div class="proof-grid" id="proofList"></div>
+</section>
+
+<!-- STYLES: switcher -->
+<section class="styles wrap" id="styles" aria-labelledby="stH">
+  <div class="sec-head">
+    <h2 id="stH" data-k="stH"></h2>
+    <p class="lede" data-k="stSub"></p>
+  </div>
+  <div class="styles-grid">
+    <ol class="style-list" id="styleList"></ol>
+    <div class="style-monitor">
+      <video id="styleVid" muted loop playsinline preload="none"></video>
+      <p class="style-cap" id="styleCap"></p>
+    </div>
+  </div>
+</section>
+
+<!-- LONG FORM -->
+<section class="longform wrap" id="longform" aria-labelledby="lfH">
+  <div class="sec-head"><h2 id="lfH" data-k="lfH"></h2><p class="lede" data-k="lfSub"></p></div>
+  <div class="lf-player"><video src="media/longv01.mp4" poster="media/longv01.jpg" controls playsinline preload="none"></video></div>
+  <ul class="lf-facts" id="lfFacts"></ul>
+</section>
+
+<!-- TESTS: hooks + thumbnails -->
+<section class="tests" id="tests" aria-labelledby="tlH">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="tlH" data-k="tlH"></h2>
+      <p class="lede" data-k="tlSub"></p>
+    </div>
+    <div class="hooklab">
+      <figure><video src="media/hookA.mp4" poster="media/hookA.jpg" muted loop playsinline preload="none" class="lazyplay"></video><figcaption data-k="hookA"></figcaption></figure>
+      <figure><video src="media/hookB.mp4" poster="media/hookB.jpg" muted loop playsinline preload="none" class="lazyplay"></video><figcaption data-k="hookB"></figcaption></figure>
+      <figure><video src="media/hookC.mp4" poster="media/hookC.jpg" muted loop playsinline preload="none" class="lazyplay"></video><figcaption data-k="hookC"></figcaption></figure>
+    </div>
+    <div class="sec-head thumbs-head">
+      <h3 class="h3big" data-k="thH"></h3>
+      <p class="lede" data-k="thSub"></p>
+    </div>
+    <div class="thumbs">
+      <figure><img src="media/thumbA.jpg" alt="Thumbnail option A" loading="lazy"><figcaption>A</figcaption></figure>
+      <figure><img src="media/thumbB.jpg" alt="Thumbnail option B" loading="lazy"><figcaption>B</figcaption></figure>
+      <figure><img src="media/thumbC.jpg" alt="Thumbnail option C" loading="lazy"><figcaption>C</figcaption></figure>
+    </div>
+    <h4 class="thumbs-more-h" data-k="thMoreH"></h4>
+    <div class="thumbs thumbs--more">
+      <figure><img src="media/thumbD.jpg" alt="Thumbnail for the long Social Security video" loading="lazy"></figure>
+      <figure><img src="media/thumbE.jpg" alt="Thumbnail for the 2D reel about the raise" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES: rate card -->
+<section class="services wrap" id="services" aria-labelledby="svcH">
+  <div class="sec-head">
+    <h2 id="svcH" data-k="svcH"></h2>
+    <p class="lede" data-k="svcSub"></p>
+  </div>
+  <ol class="ratecard" id="ratecard"></ol>
+  <p class="note" data-k="styleNote"></p>
+  <a class="btn btn-ghost magnetic" href="#brief" data-k="askQuote"></a>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages wrap" id="packages" aria-labelledby="pkH">
+  <div class="sec-head">
+    <h2 id="pkH" data-k="pkH"></h2>
+    <p class="lede" data-k="pkSub"></p>
+  </div>
+  <div class="tiers" id="tiers"></div>
+  <div class="fair">
+    <h3 data-k="fairH"></h3>
+    <ul id="fairList"></ul>
+  </div>
+</section>
+
+<!-- AI -->
+<section class="ai" aria-labelledby="aiH">
+  <div class="wrap ai-grid">
+    <div>
+      <h2 id="aiH" data-k="aiH"></h2>
+      <p class="lede" data-k="aiP"></p>
+      <ul class="stack-list" id="stackList"></ul>
+    </div>
+    <div class="ai-media">
+      <video src="media/v10car.mp4" poster="media/v10car.jpg" muted loop playsinline preload="none" class="lazyplay"></video>
+      <video src="media/lays.mp4" poster="media/lays.jpg" muted loop playsinline preload="none" class="lazyplay"></video>
+    </div>
+  </div>
+</section>
+
+<!-- EDGE: psychology + benefits -->
+<section class="edge wrap" id="edge" aria-labelledby="edH">
+  <div class="sec-head">
+    <h2 id="edH" data-k="edH"></h2>
+    <p class="lede" data-k="edSub"></p>
+  </div>
+  <ol class="edge-list" id="edgeList"></ol>
+  <h3 class="h3big" data-k="bnH"></h3>
+  <ul class="benefits" id="benefits"></ul>
+  <a class="btn magnetic" href="#brief" data-k="cta1"></a>
+</section>
+
+<!-- PROCESS -->
+<section class="process wrap" aria-labelledby="procH">
+  <h2 id="procH" data-k="procH"></h2>
+  <ol class="markers" id="markers"></ol>
+</section>
+
+<!-- FAQ -->
+<section class="faq wrap" aria-labelledby="faqH">
+  <h2 id="faqH" data-k="faqH"></h2>
+  <div id="faqList"></div>
+</section>
+
+<!-- BRIEF FORM -->
+<section class="brief" id="brief" aria-labelledby="briefH">
+  <div class="wrap brief-grid">
+    <div class="brief-intro">
+      <h2 id="briefH" data-k="briefH"></h2>
+      <p class="lede" data-k="briefSub"></p>
+      <div class="direct" id="direct"></div>
+    </div>
+    <form class="form" id="form" novalidate>
+      <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+      <p class="step-count" id="stepCount"></p>
+      <div id="steps"></div>
+      <div class="form-nav">
+        <button class="btn btn-ghost" type="button" id="back" data-k="back"></button>
+        <div class="nav-r">
+          <button class="btn btn-ghost" type="button" id="skip" hidden></button>
+          <button class="btn" type="button" id="next" data-k="next"></button>
+        </div>
+      </div>
+      <div class="form-extra" id="extra"></div>
+      <pre class="msg" id="preview" hidden></pre>
+      <p class="reassure" id="reassure"></p>
+      <p class="privacy" id="privacy"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="foot wrap">
+  <p id="footText"></p>
+  <p id="footLinks"></p>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Video">
+  <div class="lb-in">
+    <video id="lbv" controls playsinline></video>
+    <div class="lb-row"><a class="btn btn-ghost" id="lbFull" target="_blank" rel="noopener" data-k="full"></a><button class="btn btn-ghost" id="lbX" type="button" data-k="close"></button></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="content.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
